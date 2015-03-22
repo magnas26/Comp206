@@ -5,5 +5,5 @@
 void add (int); 
 void prettyPrint(); 
 BOOLEAN delete (int); 
-extern struct NODE *ptrOneBefore;  
+extern struct NODE *tail;  
 #endif 

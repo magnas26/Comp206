@@ -1,6 +1,6 @@
 #include "list.h"
 
-struct NODE *ptrOneBefore; 
+struct NODE *tail; 
 
 struct NODE{
 int number; 
