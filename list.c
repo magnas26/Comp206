@@ -1,5 +1,7 @@
 #include "list.h"
 
+struct NODE *ptrOneBefore; 
+
 struct NODE{
 int number; 
 struct NODE* next;
