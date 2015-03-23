@@ -1,14 +1,24 @@
 #include "list.h"
-
+#include <stdlib.h>
 //adding an element to a linkedlist
 void add (int aNum) {
-
-
+temp -> aNum = aNum; 
+if(head == NULL) {
+temp->next = NULL; 
+tail = temp; 
+head = temp; 
+}
+else {
+tail->next=temp; 
+temp->next=NULL; 
+tail=temp; 
+}
 }
 
 //print every concent of the linkedlist
 void prettyPrint(){
-
+for(temp=head; temp!=NULL; temp=temp->next)
+printf("%d\n", temp->aNum); 
 
 }
 

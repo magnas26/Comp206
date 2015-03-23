@@ -9,4 +9,6 @@ BOOLEAN delete (int);
 struct NODE {
 int aNum; 
 struct NODE *next; }; 
+ struct NODE *head, *temp, *tail; 
+
 #endif 

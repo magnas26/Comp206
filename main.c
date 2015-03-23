@@ -16,30 +16,19 @@ ptr = fopen(fileName, "r");
 //first count the number of integers and create approprite size of nodes struct
  
 int i=1; 
-printf("number of i %d", i);
+
 int aNum; 
-struct NODE *head = NULL, *temp; 
-struct NODE *tail = NULL; 
+head=NULL; 
+tail = NULL;  
 while (!feof(ptr)){
 fscanf(ptr, "%d", &aNum);   
 i++; 
 temp = (struct NODE *) malloc (sizeof(struct NODE)); 
-temp -> aNum = aNum; 
-if(head == NULL) {
-temp->next = NULL; 
-tail = temp;
-head = temp;  
-} 
-else {
-tail -> next = temp; 
-temp -> next = NULL; 
-tail = temp;
+add(aNum);
 }
-}
-int j=0;
-for(temp=head; temp!=NULL; temp=temp->next)
-printf("data: %d\n", temp->aNum); 
-printf("print loop %d", j);
-fclose(ptr); 
+prettyPrint(); 
+
+fclose(ptr);
+
 }
 
