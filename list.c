@@ -10,8 +10,9 @@ head = temp;
 }
 else {
 tail->next=temp; 
-temp->next=NULL; 
+temp->next=NULL;
 tail=temp; 
+
 }
 }
 
@@ -23,20 +24,35 @@ printf("%d\n", temp->aNum);
 }
 
 //search through linkedlist and return pointer that points to the list struct containing the matched number
-struct NODE *find(int aNum){
-struct NODE *ptr; 
-struct NODE a; 
-ptr=&a;   
-return ptr;  
+struct NODE *find (int aNum){
+trailPtr = head; 
+struct NODE *i = NULL; 
+for(temp = head; temp != NULL; temp=temp->next)
 
+{if(temp == head &&  temp->aNum == aNum) {
+trailPtr = head;
+head = temp->next; 
+i=head; 
+}
+else if (temp->aNum == aNum){
+trailPtr->next = temp->next; 
+temp->next = NULL; 
+i=head;
+}
+else{ 
+trailPtr = temp; 
+}}
+return i;
 }
 
 
 //call find function, if a node is found return true, else false
 BOOLEAN delete (int a){
-
-return 0; 
+if(find(a) != NULL) return 1; 
+else if (find(a) == temp) return 0;  
 }
+
+
 
 
 
