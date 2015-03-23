@@ -1,13 +1,5 @@
 #include "list.h"
 
-struct NODE *tail; 
-
-struct NODE{
-int number; 
-struct NODE* next;
-
-}aNode;  
-
 //adding an element to a linkedlist
 void add (int aNum) {
 
