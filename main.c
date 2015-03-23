@@ -12,23 +12,28 @@ printf("File not found...please enter again:  \n");
 scanf("%s", fileName); 
 ptr = fopen(fileName, "r");
 }
-//read abd add element to linkedlist. 
-//first count the number of integers and create approprite size of nodes struct
- 
+//initialize linkedlist pointer 
 int i=1; 
-
 int aNum; 
 head=NULL; 
 tail = NULL;  
 while (!feof(ptr)){
 fscanf(ptr, "%d", &aNum);   
 i++; 
-temp = (struct NODE *) malloc (sizeof(struct NODE)); 
+temp = (struct NODE *) malloc (sizeof(struct NODE));
+//call add(int) to put each number at the end of list 
 add(aNum);
 }
+fclose(ptr);
+//print content of list by traversing it. 
+prettyPrint(); 
+//ask user for an integer
+printf("Insert a number you wish to delete"); 
+scanf("%d", &aNum); 
+if(BOOLEAN delete(aNum)) printf("Number was deleted"); 
+else printf ("Number was not found"); 
 prettyPrint(); 
 
-fclose(ptr);
-
+//ask user if they want to delete another number repeadtly untiil other than yesy combinaison are inputed. 
 }
 
